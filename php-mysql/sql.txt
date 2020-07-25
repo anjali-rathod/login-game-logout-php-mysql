@@ -1,0 +1,24 @@
+CREATE DATABASE people;
+
+use people;
+
+CREATE TABLE credentials(
+		uid varchar(128),
+		upd varchar(128),
+		remember BOOLEAN,
+		PRIMARY KEY(uid)
+);
+
+insert into credentials (uid,upd) VALUES ('anjali','anjali123');
+insert into credentials (uid,upd) VALUES ('deepa','deepa123');
+insert into credentials (uid,upd) VALUES ('ruchi','ruchi123');
+insert into credentials (uid,upd) VALUES ('jitu','jitu123');
+insert into credentials (uid,upd) VALUES ('jivika','jivika123');
+insert into credentials (uid,upd) VALUES ('neha','neha123');
+
+
+GRANT ALL ON people.* TO 'anjali'@'localhost' IDENTIFIED BY 'ctc';
+
+
+
+
