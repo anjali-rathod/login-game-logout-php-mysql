@@ -13,6 +13,7 @@
     $h=$_SESSION["logged_in"];
         if($h=='pass')
         {
+
       ?>
       <h1>Welcome to my guessing game</h1>
       <h3>You have to guess a number between 1-100, if you guess the correct number as of computer ,<br>YOU WIN!</h3>
@@ -22,28 +23,29 @@
       </form>
       <p>
        <?php
-       if (!isset($_POST['guess']))
-       {
-         echo("<p style='color:red;'>Missing Guess Parameter</p>");
-       }
-       elseif (strlen($_POST['guess'])==1)
-        {
-         echo("<p style='color:red;'>Your GUess is too low</p>");
-       }
-       elseif (! is_numeric($_POST['guess']))
-        {
-         echo("<p style='color:red;'>Your GUess is not a number</p>");
-       }
-       elseif ($_POST['guess']<42)
-       {
-         echo("<p style='color:red;'>Your GUess is low</p>");
-       }
-       elseif ($_POST['guess']>42) {
-         echo("<p style='color:red;'>Your GUess is high</p>");
-       }
-       else {
-         echo ("<p style='color:green;'>Congratulations!! Your Guess is corect...</p>");
-       }
+				 header("st.css");
+	       if (!isset($_POST['guess']))
+	       {
+	         echo("<p id='e'>Missing Guess Parameter</p>");
+	       }
+	       elseif ($_POST['guess']>=1 && $_POST['guess']<=9)
+	        {
+	         echo("<p id='e'>Your Guess is too low</p>");
+	       }
+	       elseif (! is_numeric($_POST['guess']))
+	        {
+	         echo("<p id='e'>Your Guess is not a number</p>");
+	       }
+	       elseif ($_POST['guess']<42)
+	       {
+	         echo("<p id='e'>Your Guess is low</p>");
+	       }
+	       elseif ($_POST['guess']>42) {
+	         echo("<p id='e'>Your Guess is high</p>");
+	       }
+	       else {
+	         echo ("<p id='g'>Congratulations!! Your Guess is corect...</p>");
+	       }
         ?>
       </p>
       <pre>
