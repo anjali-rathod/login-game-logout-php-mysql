@@ -46,7 +46,7 @@
 
 		<pre>
 		<?php
-			$pdo=new PDO('mysql:host=localhost;port=3307;dbname=people','anjali','ctc');
+			$pdo=new PDO('mysql:host=localhost;port=3307;dbname=xyz','id','password');
 			if (isset($_POST['uid']) && isset($_POST['upd']))
 			{
 				$sql = "SELECT uid FROM credentials WHERE uid = :uid and upd = :upd ";
